@@ -18,7 +18,7 @@
     }
 
     .hero {
-      background: url('teamwork.png') center/cover no-repeat;
+      background: url('media/teamwork.png') center/cover no-repeat;
       color: white;
       padding: 100px 20px;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
@@ -33,9 +33,22 @@
       max-width: 300px;
     }
 
-    marquee {
+    .ticker {
+      overflow: hidden;
+    }
+
+    .ticker p {
+      display: inline-block;
+      white-space: nowrap;
       font-weight: bold;
       font-size: 1.2rem;
+      animation: scroll-left 12s linear infinite;
+      margin: 0;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
 
     footer {
@@ -53,14 +66,14 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">Tshilidzi Technologies</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">About Us</a>
@@ -83,9 +96,9 @@
   </section>
 
   <div class="bg-primary text-white p-3 rounded shadow-sm">
-      <marquee behavior="scroll" direction="left" scrollamount="6">
-        Welcome to Tshilidzi Technologies
-      </marquee>
+      <div class="ticker">
+        <p>Welcome to Tshilidzi Technologies</p>
+      </div>
     </div>
     
   <!-- Team List -->
